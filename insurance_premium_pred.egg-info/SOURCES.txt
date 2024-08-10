@@ -1,0 +1,6 @@
+setup.py
+insurance_premium_pred.egg-info/PKG-INFO
+insurance_premium_pred.egg-info/SOURCES.txt
+insurance_premium_pred.egg-info/dependency_links.txt
+insurance_premium_pred.egg-info/requires.txt
+insurance_premium_pred.egg-info/top_level.txt

@@ -1,0 +1,6 @@
+numpy
+seaborn
+flask
+pandas
+scikit-learn
+# -e .
