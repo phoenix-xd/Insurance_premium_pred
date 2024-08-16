@@ -5,6 +5,7 @@ Author: jayant
 Author-email: jk913600@gmail.com
 Requires-Dist: numpy
 Requires-Dist: seaborn
+Requires-Dist: streamlit
 Requires-Dist: flask
 Requires-Dist: pandas
 Requires-Dist: scikit-learn

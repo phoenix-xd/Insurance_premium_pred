@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
-from src.utilis import save_object
+from src.utils import save_object
 from src.logger import logging
 from src.exception import CustomException
 
@@ -34,9 +34,10 @@ class DataTransformation:
             numerical_cols =['age','bmi','children']
      
             # Define the custom ranking for each ordinal variable
-            sex_categories = ["female",'male']
-            smoker_categories = ['no','yes']
-            region_categories =['southwest', 'southeast', 'northwest', 'northeast']    
+            sex_categories = ['female', 'male']
+            smoker_categories = ['no', 'yes']
+            region_categories = ['southwest', 'southeast', 'northwest', 'northeast']
+            
             logging.info("pipeline Initiated")
             
             
