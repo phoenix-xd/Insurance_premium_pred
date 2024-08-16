@@ -1,8 +1,6 @@
 import streamlit as st
 import numpy as np
 from src.pipelines.prediction_pipeline import CustomData, PredictPipeline
-
-# Custom CSS for styling
 st.markdown('''
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+pmLZ4mk5R+6Zr9i5z4ET/tv0fgx" crossorigin="anonymous">
     <style>
@@ -114,6 +112,3 @@ if submit_button:
 
         except ValueError:
             st.error("Invalid input. Please enter valid numbers for age, BMI, and number of children.")
-
-# Add an image
-st.image("D:\projects PW\Insurance_premium_pred\inimg.jpg", caption="Insurance Concept")
