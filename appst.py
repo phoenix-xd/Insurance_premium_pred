@@ -64,11 +64,7 @@ st.markdown('''
         }
     </style>
 ''', unsafe_allow_html=True)
-
-# App container
 st.markdown('<div class="container">', unsafe_allow_html=True)
-
-# App title and subtitle
 st.markdown("<h1 class='text-center' style='color: #604cc3;'>Insurance Premium Prediction</h1>", unsafe_allow_html=True)
 st.markdown("<p class='text-center' style='color: #6c757d;'>Fill in the details below to predict your insurance premium.</p>", unsafe_allow_html=True)
 
@@ -114,6 +110,3 @@ if submit_button:
 
         except ValueError:
             st.error("Invalid input. Please enter valid numbers for age, BMI, and number of children.")
-
-# Add an image
-st.image("D:\projects PW\Insurance_premium_pred\inimg.jpg", caption="Insurance Concept")
