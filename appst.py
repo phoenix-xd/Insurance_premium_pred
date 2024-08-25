@@ -110,3 +110,6 @@ if submit_button:
 
         except ValueError:
             st.error("Invalid input. Please enter valid numbers for age, BMI, and number of children.")
+
+# Add an image
+st.image("D:\projects PW\Insurance_premium_pred\inimg.jpg", caption="Insurance Concept")
