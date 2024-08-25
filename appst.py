@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
 from src.pipelines.prediction_pipeline import CustomData, PredictPipeline
+
+# Custom CSS for styling
 st.markdown('''
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+pmLZ4mk5R+6Zr9i5z4ET/tv0fgx" crossorigin="anonymous">
     <style>
@@ -62,11 +64,7 @@ st.markdown('''
         }
     </style>
 ''', unsafe_allow_html=True)
-
-# App container
 st.markdown('<div class="container">', unsafe_allow_html=True)
-
-# App title and subtitle
 st.markdown("<h1 class='text-center' style='color: #604cc3;'>Insurance Premium Prediction</h1>", unsafe_allow_html=True)
 st.markdown("<p class='text-center' style='color: #6c757d;'>Fill in the details below to predict your insurance premium.</p>", unsafe_allow_html=True)
 
@@ -85,7 +83,7 @@ with st.form("prediction_form"):
     submit_button = st.form_submit_button("Predict")
 
 if submit_button:
-    if not all([age, bmi, children, sex, smoker, region]):
+    if not all([age, bmi, sex, smoker, region]):
         st.error("Please fill all fields")
     else:
         try:

@@ -4,56 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+            background: rgba(245, 245, 245, 0.253);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #28a745;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-    <form action="{{ url_for('predict_datapoint') }}" method="POST">
-        <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" placeholder="Enter your age" required>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://www.project-sherpa.eu/wp-content/uploads/2019/05/life-insurance-istock_fb.jpg" alt="Prediction App Banner">
         </div>
+        <h1>Please Fill the Details</h1>
+        <form action="{{ url_for('predict_datapoint') }}" method="POST">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" class="form-control" placeholder="Enter your age" required>
+            </div>
 
-        <div class="form-group">  
-            <label for="bmi">BMI:</label>
-            <input type="" id="bmi" name="bmi" placeholder="Enter your BMI value" step="0.1" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="children">Children:</label>
-            <input type="number" id="children" name="children" placeholder="Enter your number of children" required>
-        </div>
-      
-        <div class="form-group">
-            <label for="sex">Sex:</label>
-            <select id="sex" name="sex" required>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-            </select>
-        </div>
-      
-        <div class="form-group">
-            <label for="smoker">Smoker:</label>
-            <select id="smoker" name="smoker" required>
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-            </select>
-        </div>
+            <div class="form-group">  
+                <label for="bmi">BMI:</label>
+                <input type="number" id="bmi" name="bmi" class="form-control" placeholder="Enter your BMI value" step="0.1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="children">Children:</label>
+                <input type="number" id="children" name="children" class="form-control" placeholder="Enter your number of children" required>
+            </div>
+          
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" class="form-control" required>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+            </div>
+          
+            <div class="form-group">
+                <label for="smoker">Smoker:</label>
+                <select id="smoker" name="smoker" class="form-control" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="region_categories">Region Categories:</label>
-            <select id="region_categories" name="region_categories" required>
-                <option value="southwest">Southwest</option>
-                <option value="southeast">Southeast</option>
-                <option value="northwest">Northwest</option>
-                <option value="northeast">Northeast</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="region">Region Categories:</label>
+                <select id="region" name="region_categories" class="form-control" required>
+                    <option value="southwest">Southwest</option>
+                    <option value="southeast">Southeast</option>
+                    <option value="northwest">Northwest</option>
+                    <option value="northeast">Northeast</option>
+                </select>
+            </div>
 
-        <div style="clear:both;"></div>
-        <input type="submit" value="Submit">
-    </form>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
 
-    {% if final_result %}
-        <h2>Prediction Result: {{ final_result }}</h2>
-    {% endif %}
+        {% if final_result %}
+            <div class="result">
+                <h2>Prediction Result: {{ final_result }}</h2>
+            </div>
+        {% endif %}
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Prediction App. All rights reserved.</p>
+    </div>
 </body>
 </html>
