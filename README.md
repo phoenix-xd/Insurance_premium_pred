@@ -1,3 +1,1 @@
-insurance
-
-git branch -M main
+Team Project for Predicting Insurance Premium
